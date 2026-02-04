@@ -22,13 +22,17 @@
 
 body {
   margin: 0;
-  padding-left: 25vw;
+ margin-left: 17vw;
   font-family: 'TWK Continental', Arial, "Helvetica Neue", Helvetica, sans-serif;
   background: var(--bg-canvas);
   color: var(--text-black);
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-size: 14px;
+}
+
+.p5Canvas {
+  
 }
 
 /* ─── Sidebar ───────────────────────────── */
