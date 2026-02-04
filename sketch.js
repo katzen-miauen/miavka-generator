@@ -73,7 +73,7 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth*0.75, windowHeight);
-  pixelDensity(1);
+  pixelDensity(2);
   noiseSeed(params.seed);
 
   textFont(loadedFont);
