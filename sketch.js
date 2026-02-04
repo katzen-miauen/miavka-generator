@@ -72,7 +72,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth*0.75, windowHeight);
+  createCanvas(windowWidth*0.82, windowHeight);
   pixelDensity(2);
   noiseSeed(params.seed);
 
