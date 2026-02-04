@@ -1,0 +1,357 @@
+@font-face {
+  font-family: 'TWK Continental';
+  src: url('TWKContinental-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --sidebar-bg: #dadada;
+  --bg-canvas: #ffffff;
+
+  --text-black: #000000;
+  --track-inactive: #ffffff;
+  --track-active: #272727;
+  --number-bg: #ffffff;
+  --btn-bg: #272727;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-left: 5vw;
+  font-family: 'TWK Continental', Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background: var(--bg-canvas);
+  color: var(--text-black);
+  height: 100vh;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+/* ─── Sidebar ───────────────────────────── */
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 20vw;
+  min-width: 240px;
+  max-width: 340px;
+  padding: 18px 16px 18px 16px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+  backdrop-filter: blur(8px);
+}
+
+/* ─── Typography ────────────────────────── */
+
+.group-title,
+.slider-label,
+.field-label,
+.seed-label,
+.btn,
+.text-field,
+.select-input,
+.slider-number,
+.seed-input,
+.checkbox-input,
+.hotkeys {
+  font-size: 14px;
+  color: var(--text-black);
+}
+
+/* ─── Logo ──────────────────────────────── */
+
+.logo-container {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin-bottom: 10px;
+}
+
+/* ─── Form basics ───────────────────────── */
+
+.spacer {
+  height: 10px;
+  margin: 0;
+}
+
+.text-field {
+  width: 100%;
+  height: 60px;
+
+  padding: 5px 6px;
+  border: none;
+  background: #ffffff;
+  color: var(--text-black);
+}
+
+.select-input {
+  width: 100%;
+  /* padding: 0 2px; */
+  border: none;
+  background: #ffffff;
+  color: var(--text-black);
+}
+
+.text-field:focus,
+.select-input:focus {
+  outline: none;
+  background: #f0f0f0;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.field-label {
+  white-space: nowrap;
+}
+
+/* ─── Sliders ───────────────────────────── */
+
+.slider-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 60px;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.slider-label {
+  justify-self: start;
+}
+
+.param-slider {
+  width: 100%;
+  height: 6px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+
+  background: linear-gradient(
+    to right,
+    var(--track-active) 0%,
+    var(--track-active) var(--pos),
+    var(--track-inactive) var(--pos),
+    var(--track-inactive) 100%
+  );
+
+  border-radius: 3px;
+}
+
+.param-slider::-webkit-slider-runnable-track {
+  height: 6px;
+  background: transparent;
+  border: none;
+}
+
+.param-slider::-moz-range-track {
+  height: 6px;
+  background: transparent;
+  border: none;
+}
+
+.param-slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.param-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.slider-number {
+  height: 16px;
+  padding: 0 4px;
+  line-height: 16px;
+  text-align: left;
+  border: none;
+  background: var(--number-bg);
+}
+
+/* ─── Buttons ───────────────────────────── */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 10px;
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  padding: 4px 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.btn.small {
+  padding: 3px 8px;
+}
+
+.btn.full-width {
+  width: 100%;
+  background: var(--btn-bg);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px 0;
+  margin-top: 28px;
+}
+
+.rand-btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border: none;
+  border-radius: 0;
+  background: #333333;
+  color: white;
+  padding: 2px 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.rand-btn:hover,
+.btn:hover {
+  background: #444444;
+}
+
+.rand-btn:active,
+.btn:active {
+  background: #222222;
+}
+
+/* ─── Seed row ──────────────────────────── */
+
+.seed-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* margin-top: 36px; */
+  margin-bottom: 16px;
+}
+
+.seed-label {
+  white-space: nowrap;
+}
+
+.seed-wrapper {
+  display: flex;
+  gap: 4px;
+}
+
+.seed-input {
+  /* flex: 1; */
+  width: 100%;
+  /* padding: 5px 6px; */
+  border: none;
+  background: #ffffff;
+}
+
+.icons-wrapper {
+  display: flex;
+}
+
+.icon-placeholder {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #000000; /* цвет иконки */
+  flex-shrink: 0;
+}
+
+/* ─── Checkbox ──────────────────────────── */
+
+.checkbox-input input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  margin-right: 6px;
+  vertical-align: middle;
+  margin: 0 0 2px 0;
+}
+
+.checkbox-input input[type="checkbox"]:checked {
+  background: var(--track-active); /* чёрный при выделении */
+}
+
+/* ─── Colors row ────────────────────────── */
+
+.colors-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px 0;
+}
+
+.color-picker {
+  width: 100%;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ─── Shape & Preset row ────────────────── */
+
+.shape-preset-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.shape-preset-row .select-input {
+  flex: 1;
+}
+
+/* ─── Hotkeys ───────────────────────────── */
+
+.hotkeys {
+  margin-top: 20px;
+  color: #000000;
+  font-size: 14px;
+}
