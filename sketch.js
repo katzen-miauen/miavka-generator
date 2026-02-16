@@ -371,11 +371,11 @@ function layoutRow(y, L, R, rowIdx) {
       const baseX = xChar;
 
       // без анимации
-      // const wave = sin(y * (params.freq * rm.freqMul)) * (params.amp * rm.ampMul);
+      const wave = sin(y * (params.freq * rm.freqMul)) * (params.amp * rm.ampMul);
       // с анимацией + frameCount * 0.04
-      const wave =
-        sin(y * (params.freq * rm.freqMul) ) *
-        (params.amp * rm.ampMul);
+      // const wave =
+      //   sin(y * (params.freq * rm.freqMul) ) *
+      //   (params.amp * rm.ampMul);
 
       const n = noise(baseX * params.noiseFreq, y * params.noiseFreq);
       const nShift = (n - 0.5) * 2 * params.noiseAmt;
